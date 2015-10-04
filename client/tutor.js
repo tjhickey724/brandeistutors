@@ -28,3 +28,10 @@ Template.tutor.events({
 		Router.go("home");
 	}
 });
+
+Template.tutor.helpers({
+	brandeisian: function(){
+		var ee = Meteor.user().services.google.email;
+		return ee.substring(ee.length-13) == "@brandeis.edu";
+	}
+})

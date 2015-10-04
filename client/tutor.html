@@ -1,10 +1,11 @@
 <template name="tutor">
 	<h1>Register to be a Tutor for a particular course</h1>
+
 	{{#if currentUser}}
 	Please fill out the following form to register as a tutor.<br>
 	You should fill out one form for each course you would like to tutor.
 	<hr>
-	
+	{{#if brandeisian}}
 	<form id="tutorform">
 		<div class="form-group">
 			<label for="course">Course:</label>
@@ -21,6 +22,9 @@
 		<input class="btn btn-large btn-primary" type="submit" value="Register as Tutor">
 	</form>
 	{{else}}
-	You need to log in to register as a tutor
+	<h1 class="text-warning">You must login with a Brandeis email to signup as a tutor</h1>
+	{{/if}}
+	{{else}}
+	<h1 class="text-warning">You need to log in to register as a tutor</h1>
 	{{/if}}
 </template>
