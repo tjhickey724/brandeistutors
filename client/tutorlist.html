@@ -1,0 +1,28 @@
+<template name="tutorlist">
+  <table class="table table-striped">
+	  <thead>
+		  <tr>
+			  <th>Course</th>
+			  <th>Hourly Rate</th>
+			  <th>Tutor</th>
+			  <th>Qualifications</th>
+			  <th>Posted</th>
+		  </tr>
+	  </thead>
+	  <tbody>
+		  {{#each tutors}}
+		  {{> tutorrow}}
+		  {{/each}}
+	  </tbody>
+  </table>
+</template>
+
+<template name="tutorrow">
+	<tr><td>{{course}}</td>
+		<td>${{price}}/hour</td>
+		<td>{{who}}<br>{{email}}</td>	
+		<td>{{bio}}</td>
+		<td>{{formatDate when}}</td>
+		<td>{{#if delete}}<button class="remove">X</button>{{/if}}</td>
+	</tr>
+</template>

@@ -1,0 +1,26 @@
+<template name="tutor">
+	<h1>Register to be a Tutor for a particular course</h1>
+	{{#if currentUser}}
+	Please fill out the following form to register as a tutor.<br>
+	You should fill out one form for each course you would like to tutor.
+	<hr>
+	
+	<form id="tutorform">
+		<div class="form-group">
+			<label for="course">Course:</label>
+			<input type="text" id="course" placeholder="CS11a">
+		</div>
+		<div class="form-group">
+			<label for="price">Hourly Rate:</label> 
+			<input type="text" id="price" placeholder="10">
+		</div>
+		<div class="form-group">
+			<label for="bio">Your qualifications to be a tutor for this course:</label><br>
+			<textarea id="bio" rows="10" cols="100%"></textarea>
+		</div>
+		<input class="btn btn-large btn-primary" type="submit" value="Register as Tutor">
+	</form>
+	{{else}}
+	You need to log in to register as a tutor
+	{{/if}}
+</template>
